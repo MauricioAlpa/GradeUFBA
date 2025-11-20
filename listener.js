@@ -1,16 +1,20 @@
+var regex = /\s/g;
+
 class Codigo {
-    #codigo
     #dias
     #turnos
     #horarios
 
     constructor(codigo) {
-        this.#codigo = codigo.split('')
+        if(regex.test(codigo)){
+            this.#codigos.push(codigo.split(" "));
+
+        } else {
+            this.#codigo = codigo.split("");
+        }
         this.#dias = [];
         this.#turnos = [];
         this.#horarios = [];
-
-        this.leitorCodigo();
     }
 
     get codigo(){
@@ -29,12 +33,12 @@ class Codigo {
         return `A máteria ${this.#codigo.join('')} acontecera nos dias:${this.#dias}, nos turnos:${this.#turnos}, nos horarios:${this.#horarios}`
     }
 
-    leitorCodigo() {
+    leitorCodigo(codigo) {
         let passLetter = false;
 
-        for(let i = 0; i < this.#codigo.length; i++) {
+        for(let i = 0; i < codigo.length; i++) {
 
-            const char = this.#codigo[i];
+            const char = this.codigo[i];
 
             if(isNaN(char)){
                 passLetter = true;
@@ -48,10 +52,9 @@ class Codigo {
             }
         }
     }
-
 }
 
-let c = new Codigo("12MT45")
+let c = new Codigo("12M45 34T45")
 
 console.log(c.toString())
 
