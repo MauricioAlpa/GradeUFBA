@@ -1,60 +1,16 @@
-var regex = /\s/g;
+import {readCode, verifyCode} from "./functions.js";
 
-class Codigo {
-    #dias
-    #turnos
-    #horarios
+const displayCode = document.getElementById("codigo-horario");
+const codeButton = document.getElementById("btn-adicionar");
+const displayClass = document.getElementById("nome-materia")
 
-    constructor(codigo) {
-        if(regex.test(codigo)){
-            this.#codigos.push(codigo.split(" "));
-
-        } else {
-            this.#codigo = codigo.split("");
-        }
-        this.#dias = [];
-        this.#turnos = [];
-        this.#horarios = [];
-    }
-
-    get codigo(){
-        return this.#codigo;
-    }
-
-    get turnos() {
-        return this.#turnos;
-    }
-
-    get horarios() {
-        return this.#horarios
-    }
-
-    toString(){
-        return `A máteria ${this.#codigo.join('')} acontecera nos dias:${this.#dias}, nos turnos:${this.#turnos}, nos horarios:${this.#horarios}`
-    }
-
-    leitorCodigo(codigo) {
-        let passLetter = false;
-
-        for(let i = 0; i < codigo.length; i++) {
-
-            const char = this.codigo[i];
-
-            if(isNaN(char)){
-                passLetter = true;
-                this.#turnos.push(char)
-            } else {
-                if(!passLetter) {
-                    this.#dias.push(char);
-                } else {
-                    this.#horarios.push(char);
-                }
-            }
+codeButton.addEventListener("click", () => {
+    let codigo = verifyCode(displayCode.value);
+    for(let c of codigo){
+        let result = readCode(c);
+        for(let r of result){
+            let cel = document.getElementById(r);
+            cel.innerText = displayClass.value;
         }
     }
-}
-
-let c = new Codigo("12M45 34T45")
-
-console.log(c.toString())
-
+})
