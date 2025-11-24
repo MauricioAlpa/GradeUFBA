@@ -1,6 +1,6 @@
 function readCode(codigo) {
     let regex = /[a-z]/i;
-    let time = []; //23M45
+    let time = []; //23M45= [cell-2-M4, cel]
     let days = [];
     let dayShift = "";
     let passLetter = false;
@@ -44,5 +44,7 @@ function toString(days, dayShift, time){ //cell-2-N4
 
     return arrayId;
 }
+
+
 
 export {verifyCode, readCode};
