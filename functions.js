@@ -41,7 +41,6 @@ function toString(days, dayShift, time){ //cell-2-N4
             arrayId.push(`cell-${d}-${dayShift}${t}`);
         }
     }
-
     return arrayId;
 }
 
