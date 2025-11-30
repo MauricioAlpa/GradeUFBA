@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/MauricioAlpa/GradeUFBA/issues"
   },
-  "homepage": "https://github.com/MauricioAlpa/GradeUFBA#readme"
+  "homepage": "https://github.com/MauricioAlpa/GradeUFBA#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "puppeteer": "^24.31.0"
+  }
 }
