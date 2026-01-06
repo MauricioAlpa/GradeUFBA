@@ -1,6 +1,6 @@
 function readCode(codigo) {
     let regex = /[a-z]/i;
-    let time = []; //23M45
+    let time = [];
     let days = [];
     let dayShift = "";
     let passLetter = false;
@@ -24,6 +24,7 @@ function readCode(codigo) {
     return toString(days, dayShift, time)
 }
 
+//Funcao que verifica se o input tem mais de um codigo
 function verifyCode(codigo) {
     const regex = /\s+/;
     codigo = codigo.trim();
@@ -34,7 +35,8 @@ function verifyCode(codigo) {
     return [codigo];
 }
 
-function toString(days, dayShift, time){ //cell-2-N4
+//Transforma o codigo no id
+function toString(days, dayShift, time){ 
     let arrayId = [];
     for(let d of days){
         for(let t of time){
