@@ -1,5 +1,7 @@
 import {readCode, verifyCode} from "./functions.js";
 
+
+
 const displayCode = document.getElementById("codigo-horario");
 const codeButton = document.getElementById("btn-adicionar");
 const displayClass = document.getElementById("nome-materia");

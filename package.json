@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/MauricioAlpa/GradeUFBA/issues"
   },
-  "homepage": "https://github.com/MauricioAlpa/GradeUFBA#readme",
-  "dependencies": {
-    "html2pdf.js": "^0.12.1"
-  }
+  "homepage": "https://github.com/MauricioAlpa/GradeUFBA#readme"
 }
